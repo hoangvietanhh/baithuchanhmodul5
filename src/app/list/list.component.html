@@ -1,0 +1,32 @@
+<div class="container-fluid">
+  <div class="card">
+    <div class="card-header">
+      <h2>Book List ( number of book : {{books.length}})</h2>
+    </div>
+        <button class="btn btn-warning btn-sm" (click)="createBook()">Create Book</button>
+      <table class="table table-hover">
+        <thead>
+        <tr>
+          <th scope="col"> Id</th>
+          <th> Tittle</th>
+          <th> Author</th>
+          <th>Description</th>
+          <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let b of books">
+          <th scope="row">{{b.id}}</th>
+          <td>{{b.title}}</td>
+          <td>{{b.author}}</td>
+          <td>{{b.description}}</td>
+          <td>
+            <button class="btn btn-success" (click)="bookDetail(b.id)"><i class="fa fa-info" aria-hidden="true"></i> Detail</button>
+            <button class="btn btn-danger" (click)="deleteBook(b.id)"><i class="fa fa-trash" aria-hidden="true"></i> Delete</button>
+            <button class="btn btn-primary" (click)="updateBook(b.id)"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Update</button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
